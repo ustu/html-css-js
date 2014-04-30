@@ -32,22 +32,43 @@ p
 }
 </style>
 <link href="style.css" media="all" rel="stylesheet" type="text/css" />
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".jquery-image").click(function(){
+		$(".jquery-image").animate({opacity: "0.1", left: "+=400"}, 1200)
+		.animate({opacity: "0.4", top: "+=160", height: "20", width: "20"}, "slow")
+		.animate({opacity: "1", left: "0", height: "100", width: "100"}, "slow")
+		.animate({top: "0"}, "fast")
+		.slideUp()
+		.slideDown("slow")
+		.animate({opacity: "1", top: "0", height: "293", width: "500"}, "slow")
+		return false;
+	});
+	$(".replace-text").click(function(){
+		$(this).text("Во всемирной паутине HTML-страницы, как правило, передаются браузерам от сервера по протоколам HTTP или HTTPS, в виде простого текста или с использованием сжатия.");
+	});
+		$(".hide").click(function(){
+		$(this).hide();
+	});
+});
+</script>
 <body>
 <table width="100%" border="1" cellspacing="10" cellpadding="10">
   <tr>
     <td width="60%">
-    <h1 onClick="alert('CLICK!!!')">HTML</h1>
+    <h1>HTML</h1>
     <a href="html.html">HTML</a>
     <a href="js.html">JS</a>
     <a href="css.html" style="color: green">CSS</a>
     <hr/>
-    <p onClick="alert('CLICK!!!')">HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки») — стандартный язык разметки документов во Всемирной паутине. Большинство веб-страниц содержат описание разметки на языке HTML (или XHTML). Язык HTML интерпретируется браузерами и отображается в виде документа в удобной для человека форме.</p>
+    <p class="replace-text">HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки») — стандартный язык разметки документов во Всемирной паутине. Большинство веб-страниц содержат описание разметки на языке HTML (или XHTML). Язык HTML интерпретируется браузерами и отображается в виде документа в удобной для человека форме.</p>
       <p style="color: black; background-color: red; color: #fff"> Язык HTML является приложением («частным случаем») SGML (стандартного обобщённого языка разметки) и соответствует международному стандарту ISO 8879.</p>
-      <p> Язык XHTML является более строгим вариантом HTML, он следует всем ограничениям XML и, фактически, XHTML можно воспринимать как приложение языка XML к области разметки гипертекста.</p>
+      <p class="hide"> Язык XHTML является более строгим вариантом HTML, он следует всем ограничениям XML и, фактически, XHTML можно воспринимать как приложение языка XML к области разметки гипертекста.</p>
     <p> Во всемирной паутине HTML-страницы, как правило, передаются браузерам от сервера по протоколам HTTP или HTTPS, в виде простого текста или с использованием сжатия.</p>
     <hr/>
     </td>
-    <td width="40%"><img src="html-css-js.png" onClick="alert('CLICK!!!')" width="500" height="293" alt="HTML JS CSS"></td>
+    <td width="40%"><img src="html-css-js.png" class="jquery-image" width="500" height="293" alt="HTML JS CSS"></td>
   </tr>
 </table>
 </body>
